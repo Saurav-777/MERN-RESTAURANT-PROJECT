@@ -5,19 +5,19 @@
                 "id": 1,
                 "image": "./quality_food.svg",
                 "title": "QUALITY FOOD",
-                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis repellendus officia qui repellat." 
+                "description": "We serve freshly prepared dishes made with high-quality ingredients, ensuring every bite is full of authentic flavor and freshness." 
             },
             {
                 "id": 2,
                 "image": "./super_taste.svg",
                 "title": "SUPER TASTE",
-                "description": "Lorem ipsum dolor sit amet consectetur, adipisicing sit amet elit. Sit voluptates quaerat pariatur." 
+                "description": " Our menu is crafted to deliver exceptional taste experiences, combining unique flavors and culinary techniques that delight the palate." 
             },
             {
                 "id": 3,
                 "image": "./fast_delivery.svg",
                 "title": "FAST DELIVERY",
-                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis repellendus officia qui repellat." 
+                "description": "We prioritize prompt service, ensuring that your meals are delivered quickly and efficiently, so you can enjoy your food at its best." 
             }
         ],
         "dishes": [
@@ -48,7 +48,7 @@
             {
                 "id": 5,
                 "image": "./lunch1.png",
-                "title": "BEEF BURGER MEAL",
+                "title": "CHICKEN BURGER MEAL",
                 "category": "Lunch"
             },
             {

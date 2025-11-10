@@ -16,8 +16,9 @@ export const errorMiddleware = (err, req, res, next) => {
 
 
   if (err.name === 'ValidationError') {
-    const validationErrors = Object.values(error.errors).map(err => err.message);
-    return next(new ErrorHandler(validationErrors.join(', '), 400));
+    // Build a friendly message from Mongoose validation errors and return it
+    const validationErrors = Object.values(err.errors).map((e) => e.message);
+    return res.status(400).json({ success: false, message: validationErrors.join(', ') });
   }
 
 

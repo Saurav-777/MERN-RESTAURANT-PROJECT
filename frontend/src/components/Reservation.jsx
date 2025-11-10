@@ -4,6 +4,8 @@ import axios from "axios";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
+import { Link as RouterLink } from "react-router-dom";
 
 const Reservation = () => {
   const [firstName, setFirstName] = useState("");
@@ -13,6 +15,7 @@ const Reservation = () => {
   const [time, setTime] = useState("");
   const [phone, setPhone] = useState("");
   const navigate = useNavigate();
+  const { currentUser } = useAuth();
 
   const handleReservation = async (e) => {
     e.preventDefault();
@@ -65,7 +68,13 @@ const Reservation = () => {
           <div className="reservation_form_box">
             <h1>MAKE A RESERVATION</h1>
             <p>For Further Questions, Please Call</p>
-            <form onSubmit={handleReservation}>
+            {/* If user not logged in, prompt to login/signup */}
+            {!currentUser ? (
+              <div style={{ padding: 12 }}>
+                <p>Please <RouterLink to="/login">login</RouterLink> or <RouterLink to="/signup">sign up</RouterLink> to make a reservation.</p>
+              </div>
+            ) : (
+              <form onSubmit={handleReservation}>
               <div>
                 <input
                   type="text"
@@ -127,7 +136,8 @@ const Reservation = () => {
                   <HiOutlineArrowNarrowRight />
                 </span>
               </button>
-            </form>
+              </form>
+            )}
           </div>
         </div>
       </div>
